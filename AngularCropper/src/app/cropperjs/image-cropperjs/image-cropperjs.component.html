@@ -1,0 +1,26 @@
+<p>
+    image-cropperjs works!
+</p>
+
+<!-- <div>
+    <input type="file" accept="image/jpeg" (change)="getImgUrl($event)">
+
+    <div class="box">
+        <img id="image" src="../../../assets/image/timg.jpg">
+    </div>
+
+    <button (click)="rotateRight()">rotate</button>
+</div> -->
+
+
+<div id="container1">
+
+    <img id="image" style="display: none" src="../../../assets/image/chelun.gif">
+    <input type="file" (change)="fileChangeEvent($event)" />
+
+    <image-cropper [imageChangedEvent]="imageChangedEvent" [imageBase64]="base64String" [maintainAspectRatio]="true" [aspectRatio]="1 / 1" [resizeToWidth]="200" resizeToHeight="200" format="png" (imageCropped)="imageCropped($event)" (imageLoaded)="imageLoaded()"
+        (cropperReady)="cropperReady()" (loadImageFailed)="loadImageFailed()"></image-cropper>
+
+    <img [src]="croppedImage" />
+
+</div>
